@@ -1,0 +1,45 @@
+.clase {
+  background-color: #ff44aa;
+  color: #a52a2a;
+  border-radius: 355px 45px 225px 75px / 15px 225px 15px 255px;
+  padding: 30px;
+}
+
+head {
+  margin: 10px;
+  background-color: #aaff00;
+}
+
+ol{
+    list-style-type:lower-latin;
+}
+
+span{
+    background-color: bisque;
+    border-radius: 355px 45px 225px 75px / 15px 225px 15px 255px;
+  padding: 30px;
+  margin: 50px;
+}
+p{
+    background-color: bisque;
+    border-radius: 355px 45px 225px 75px / 15px 225px 15px 255px;
+  padding: 30px;
+}
+
+.negrita{
+    font-weight: bolder;
+    color: #222;
+}
+
+s{
+    text-decoration: underline;
+}
+
+tachado{
+    text-decoration: line-through;
+}
+
+img{
+    width: 50%;
+    margin: auto 0;
+}
