@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Botones</title>
+    <link href="https://cdn.metroui.org.ua/current/icons.css" rel="stylesheet" />
+    <style>
+      .button {
+        background-color: #f0aaff;
+        border: 1px solid #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #fff;
+        height: 40px;
+        font-size: 15px;
+      }
+      .button:hover {
+        background-color: #f055aa;
+        border: 2px solid#444;
+      }
+      .button:active {
+        background-color: #0055aa;
+      }
+      .only-icon {
+        width: 40px;
+        padding: unset !important;
+      }
+      .icon > span {
+        margin-right: 4px;
+      }
+
+      div {
+        margin-bottom: 10px;
+      }
+
+      .circle {
+        border-radius: 50%;
+        font-size: 10px;
+        width: 44px;
+        height: 44px;
+        margin-right: 5px;
+      }
+      .medium {
+        font-size: 12px;
+        width: 56px;
+        height: 56px;
+      }
+
+      .large {
+        font-size: 18px;
+        width: 72px;
+        height: 72px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button class="button">Button</button>
+      <button class="button only-icon"><span class="mif-bin"></span></button>
+      <button class="button icon"><span class="mif-bin"></span>Button</button>
+    </div>
+    <div>
+      <button class="button only-icon circle"><span class="mif-plus"></span></button>
+      <button class="button only-icon circle"><span class="mif-minus"></span></button>
+
+      <button class="button only-icon circle medium"><span class="mif-plus"></span></button>
+      <button class="button only-icon circle medium"><span class="mif-minus"></span></button>
+
+      <button class="button only-icon circle large"><span class="mif-plus"></span></button>
+      <button class="button only-icon circle large"><span class="mif-minus"></span></button>
+    </div>
+  </body>
+</html>
