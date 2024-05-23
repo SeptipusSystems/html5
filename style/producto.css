@@ -1,0 +1,42 @@
+.hexagon img{
+    position: absolute;
+    top: -50px;
+    max-width: 100%;
+    opacity: 0;
+}
+
+.image1{
+    background: url('/source/heximage.jpg') center no-repeat;
+    background-color: #6C6;
+}
+
+.image2{
+    background-color: #606;
+}
+
+.hexagon{
+    top: 150px;
+    width: 200px;
+    height: 173.21px; /*altura = lado * srq(3) */
+    background-size: cover;
+    position: relative;
+}
+
+.hexagon::before, .hexagon::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    border-left: 173.21px solid transparent;
+    border-right: 173.21px solid transparent;
+}
+
+.hexagon::before{
+    bottom: 100%;
+    border-bottom: 86.60px solid #6c6;
+}
+
+.hexagon::after{
+    top: 100%;
+    left: 0;
+    border-top: 86.60px solid #6c6;
+}

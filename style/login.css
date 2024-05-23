@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+*::after,
+*::before {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/source/retro-futuristic-background.jpg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /*view height*/
+}
+.form {
+  background-color: rgba(200, 200, 200, 0.5);
+  width: 266px;
+  padding: 30px;
+  border-radius: 15px;
+}
+.top {
+  height: 50%;
+}
+
+input[type="submit"] {
+  all: unset;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgba(200, 200, 200, 1);
+}
+
+.form input[type="submit"]:first-of-type {
+  margin-right: 15px;
+}
+
+input[type="submit"]:hover {
+  color: #eee;
+  background-color: rgba(100, 100, 100, 1);
+  box-shadow: 0 0 12px rgba(0, 123, 255, 1);
+}
+
+.form label:first-of-type {
+  margin-top: 0;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 1);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+  outline: none;
+  border: 1px solid #a0f;
+  border-radius: 5px;
+  padding: 5px;
+  transition: box-shadow 0.5s ease-in-out, border-color 0.5s ease-in-out;
+  width: 100%;
+}
+
+/*
+Extra pequeño (XS): Menos de 576px de ancho.
+Pequeño (SM): Desde 576px hasta 767px de ancho.
+Mediano (MD): Desde 768px hasta 991px de ancho.
+Grande (LG): Desde 992px hasta 1199px de ancho.
+Extra grande (XL): 1200px o más de ancho.
+*/
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 80%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .form {
+    background-color: rgba(10, 10, 10, 1);
+    color: white;
+  }
+}
+
+@media print {
+  .form input[type="submit"]:first-of-type {
+    display: none;
+  }
+
+  .form {
+    background-color: rgba(255, 10, 10, 1);
+    color: orange;
+  }
+}
