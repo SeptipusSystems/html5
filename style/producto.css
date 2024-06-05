@@ -1,42 +1,68 @@
-.hexagon img{
-    position: absolute;
-    top: -50px;
-    max-width: 100%;
-    opacity: 0;
-}
-
-.image1{
+.image1 {
     background: url('/source/heximage.jpg') center no-repeat;
-    background-color: #6C6;
-}
-
-.image2{
-    background-color: #606;
-}
-
-.hexagon{
-    top: 150px;
-    width: 200px;
-    height: 173.21px; /*altura = lado * srq(3) */
     background-size: cover;
+}
+
+.image2 {
+    background: url('/source/heximage.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.hexagon {
+    width: 200px; /* Ancho del hexágono */
+    height: 200px; /* Alto del hexágono */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.5s ease-out;
+}
+
+.hexagon:hover {
+    transform: scale(1.2);
+}
+
+.hexagon-content {
+    position: absolute;
+    color: rgb(202, 110, 18);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre triángulos */
+}
+
+.triangle {
+    width: 200px; /* Ancho de cada triángulo */
+    height: 200px; /* Alto de cada triángulo */
+    overflow: hidden;
     position: relative;
 }
 
-.hexagon::before, .hexagon::after{
-    content: '';
-    position: absolute;
-    width: 0;
-    border-left: 173.21px solid transparent;
-    border-right: 173.21px solid transparent;
+.triangle:hover {
+    transform: scale(1.2);
 }
 
-.hexagon::before{
-    bottom: 100%;
-    border-bottom: 86.60px solid #6c6;
+.triangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.hexagon::after{
-    top: 100%;
-    left: 0;
-    border-top: 86.60px solid #6c6;
+.triangle:nth-child(odd){
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    margin-right: -100px;
+}
+
+.triangle:nth-child(even) {
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+    margin-right: -100px;
 }
