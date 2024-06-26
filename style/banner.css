@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+root {
+  --font: black;
+}
+
+body {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  color: var(--font);
+}
+
+p {
+  font-size: 12px;
+}
+
+.content {
+  margin: 50px;
+  position: relative;
+  z-index: 10000;
+}
+
+.banner {
+  background-color: var(--background);
+  width: 600px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+  clip-path: circle();
+  /*border-radius: 50%;*/
+  position: absolute;
+  transition: 0.5s;
+}
+
+.circle1 {
+  background-color: #fff;
+  width: 450px;
+  height: 450px;
+  top: -200px;
+  left: -100px;
+}
+
+.circle1:hover {
+  width: 500px;
+  height: 500px;
+}
+
+.circle2 {
+  background-color: var(--background2);
+  width: 350px;
+  height: 350px;
+  top: -200px;
+  left: 300px;
+}
+
+.circle2:hover {
+  width: 300px;
+  height: 300px;
+}
+
+.circle3 {
+  background-color: var(--background3);
+  width: 350px;
+  height: 350px;
+  top: 50px;
+  left: 400px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/banner.css">
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            document.getElementById("banner1")
+            .addEventListener("click",function(){
+                let banner = document.getElementById("banner1");
+                banner.style.display = "none";
+                console.log("ocultar banner");
+            });
+        });
+    </script>
+    <title>Banner</title>
+</head>
+<body>
+    <div id="banner1" style="--background: rgb(0,110,255)" class="banner">
+        <div class="circle1"></div>
+        <div style="--background2: rgba(0,25,255,0.5)" class="circle2"></div>
+        <div style="--background3: rgba(55,10,255,0.5)" class="circle3"></div>
+        <div class="content">
+            <h1><span style="--font: rgb(0,110,255)">Banner</span> Design</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Odit earum saepe, perspiciatis similique minima exercitationem fugit esse non pariatur quos nam amet,
+             repellendus rem consequatur deleniti tenetur ut a. Enim?</p>
+        </div>
+    </div>
+</body>
+</html>

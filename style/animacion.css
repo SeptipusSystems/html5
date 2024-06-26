@@ -106,3 +106,31 @@ body{
 .perspective-3d:hover .inner-box{
     transform: rotateY(0deg);
 }
+
+@keyframes example-animation {
+    0% {
+        transform: translateX(0) scale(1);
+        background-color: #4CAF50;
+    }
+    25% {
+        transform: translateX(25px) scale(1.25);
+        background-color: #FF9907;
+    }
+    50% {
+        transform: translateX(50px) scale(1.5);
+        background-color: #FFC107;
+    }
+    75% {
+        transform: translateX(25px) scale(1.25);
+        background-color: #aaAF50;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        background-color: #4CAF50;
+    }
+}
+
+.animation:hover {
+    animation: example-animation 2s infinite;
+    transition: all 0.8s;
+}
