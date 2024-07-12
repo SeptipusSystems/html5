@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake store</title>
+    <link rel="stylesheet" defer href="https://cdn.metroui.org.ua/current/icons.css" />
+    <script src="./js/fakestore.js"></script>
+    <style>
+      [class*=mif-] {
+        color: yellow; /* Color amarillo */
+      }
+
+      #store {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+      }
+      .product-card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+      }
+
+      .product-card img {
+        width: 100px;
+        height: auto;
+      }
+
+      .product-card h3 {
+        font-size: 1.2em;
+        margin: 0.5em 0;
+      }
+
+      .product-card p {
+        font-size: 1em;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="store"></div>
+  </body>
+</html>
