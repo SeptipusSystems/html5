@@ -1,6 +1,6 @@
 const apiUrl = "https://pokeapi.co/api/v2/";
 function consutar(detalle){
-fetch(apiUrl + detalle)
+fetch(apiUrl + "pokemon/" + detalle.toLowerCase())
   .then((response) => {
     // Verificar si la respuesta es exitosa
     if (!response.ok) {
