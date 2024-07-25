@@ -1,0 +1,58 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .banner {
+        background-color: #f2f2f2;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 80%;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .banner h2 {
+        margin: 0 0 10px;
+        color: #333;
+      }
+      .banner p {
+        margin: 0 0 20px;
+        color: #666;
+      }
+      .banner input[type="email"] {
+        padding: 10px;
+        width: 60%;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .banner button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .banner button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+    <title>Newsletter Banner</title>
+  </head>
+  <body>
+    <div class="banner">
+      <h2>¡Suscríbete a nuestro Newsletter!</h2>
+      <p>
+        Recibe las últimas actualizaciones directamente en tu bandeja de
+        entrada.
+      </p>
+      <form action="guardar-correo/" method="post">
+        <input id="email" name="email" type="email" placeholder="Ingresa tu correo electrónico" />
+        <button>Suscribirse</button>
+      </form>
+    </div>
+  </body>
+</html>
