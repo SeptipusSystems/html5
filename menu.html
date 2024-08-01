@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barra de menú</title>
+    <style>
+        body {
+          height: 1200px;
+        }
+    
+        .bar-menu {
+          width: 100%;
+          background-color: #101515;
+          position: fixed;
+          top: 0;
+          left: 0;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+    
+        .menu {
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+        }
+    
+        .bar-menu .menu > li {
+          position: relative;
+          height: 38px;
+          line-height: 38px;
+          margin: 0;
+          padding: 0 20px;
+          white-space: nowrap;
+        }
+    
+        .bar-menu .menu > li:hover {
+          background-color: #304040;
+        }
+    
+        .item {
+          text-decoration: none;
+          color: #f0f0f0;
+          font-size: 18px;
+        }
+    
+        .submenu li, .more-menu li {
+          padding: 6px 20px;
+        }
+    
+        .menu > li:hover .submenu {
+          display: block;
+        }
+    
+        .more {
+          display: none; /* Oculto por defecto, se mostrará si hay elementos escondidos */
+          position: relative;
+        }
+    
+      </style>
+    </head>
+    <body>
+      <div class="bar-menu">
+        <ul class="menu" id="menu">
+          <li><a class="item" href="">Home</a></li>
+          <li><a class="item" href="">Otro</a></li>
+          <li><a class="item" href="">Más</a></li>
+          <li>
+            <a class="item" href="">Submenu</a>
+            <ul class="submenu">
+              <li><a class="item" href="">Sub 1</a></li>
+              <li><a class="item" href="">Sub 2</a></li>
+              <li><a class="item" href="">Sub 3</a></li>
+              <li><a class="item" href="">Sub 4</a></li>
+            </ul>
+          </li>
+          <li><a class="item" href="">Ayuda</a></li>
+          <li class="more"><a class="item" href="#">...</a>
+            <ul class="submenu more-menu" id="more-menu">
+              <!-- Aquí se añadirán los elementos que no caben -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+    
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var menu = document.getElementById('menu');
+          var moreMenu = document.getElementById('more-menu');
+          var moreItem = document.querySelector('.more');
+    
+          if (menu && moreMenu && moreItem) {
+            var menuItems = Array.from(menu.children);
+            var moreItemWidth = moreItem.offsetWidth;
+    
+            function checkMenuOverflow() {
+              // Restablecer las visualizaciones de los elementos
+              menuItems.forEach(item => item.style.display = 'inline-block');
+              moreMenu.innerHTML = '';
+              moreItem.style.display = 'none';
+    
+              var availableWidth = menu.clientWidth - moreItemWidth;
+              var totalWidth = 0;
+    
+              for (var i = 0; i < menuItems.length - 1; i++) { // Excluye el botón "más"
+                var item = menuItems[i];
+                totalWidth += item.offsetWidth;
+    
+                if (totalWidth > availableWidth) {
+                  moreItem.style.display = 'inline-block';
+                  item.style.display = 'none';
+                  var clonedItem = item.cloneNode(true);
+                  clonedItem.style.display = 'inline-block';
+                  moreMenu.appendChild(clonedItem);
+                }
+              }
+            }
+    
+            // Verifica el desbordamiento al cargar y al redimensionar
+            checkMenuOverflow();
+            window.addEventListener('resize', checkMenuOverflow);
+          }
+        });
+      </script>
+  </body>
+</html>
